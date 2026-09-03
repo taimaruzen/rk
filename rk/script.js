@@ -1,29 +1,17 @@
-const menuBtn = document.getElementById('btn-a');
-const menuBtn1 = document.getElementById('btn-b');
+const openMenuBtn = document.getElementById('btn-a');
+const closeMenuBtn = document.getElementById('btn-b');
 const sideMenu = document.getElementById('side-menu');
+const languageBtn = document.querySelector('#language-btn');
+const languageList = document.querySelector('#language-list');
 
-menuBtn.addEventListener('click', () => {
+function toggleSideMenu() {
   sideMenu.classList.toggle('open');
-  languageList.classList.remove("open");
-});
-menuBtn1.addEventListener('click', () => {
-  sideMenu.classList.toggle('open');
-  languageList.classList.remove("open");
-});
+  languageList.classList.remove('open');
+}
 
-// ① LANGUAGEを探す
-const languageBtn =
-  document.querySelector("#language-btn");
+openMenuBtn.addEventListener('click', toggleSideMenu);
+closeMenuBtn.addEventListener('click', toggleSideMenu);
 
-// ② 言語一覧を探す
-const languageList =
-  document.querySelector("#language-list");
-
-
-// ③ LANGUAGEが押されたら
-languageBtn.addEventListener("click", function () {
-
-  // ④ 言語一覧を出す・隠す
-  languageList.classList.toggle("open");
-
+languageBtn.addEventListener('click', () => {
+  languageList.classList.toggle('open');
 });
