@@ -16,42 +16,38 @@ let mouseY = -1000;
 
 // マウスが動いたら位置を記録
 document.addEventListener("mousemove", (event) => {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
+  mouseX = event.clientX;
+  mouseY = event.clientY;
 });
 
 function draw() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#00ff00";
+  ctx.font = fontSize + "px monospace";
 
-    ctx.fillStyle = "#00ff00";
-    ctx.font = fontSize + "px monospace";
+  for (let i = 0; i < drops.length; i++) {
+    const x = i * fontSize;
+    const y = drops[i] * fontSize;
 
-    for (let i = 0; i < drops.length; i++) {
+    // マウスとの距離
+    const dx = x - mouseX;
+    const dy = y - mouseY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
-
-        // マウスとの距離
-        const dx = x - mouseX;
-        const dy = y - mouseY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        // マウスから80px以内なら文字を描かない
-        if (distance > 150) {
-            const text =
-                letters[Math.floor(Math.random() * letters.length)];
-
-            ctx.fillText(text, x, y);
-        }
-
-        if (y > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-        }
-
-        drops[i]++;
+    // マウスから150px以内なら文字を描かない
+    if (distance > 150) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, x, y);
     }
+
+    if (y > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+
+    drops[i]++;
+  }
 }
 
 setInterval(draw, 33);

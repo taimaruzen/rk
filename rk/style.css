@@ -2,32 +2,32 @@
 body {
   background: black;
   color: white;
-  margin: 0;    /* ブラウザ標準の余白をリセット(画面端の隙間を消す) */
+  margin: 0; /* ブラウザ標準の余白をリセット(画面端の隙間を消す) */
   padding: 0;
 }
 
 html {
-    scrollbar-width: none; /* Firefox */
+  scrollbar-width: none; /* Firefox */
 }
 
 html::-webkit-scrollbar {
-    display: none; /* Chrome系・Safari */
+  display: none; /* Chrome系・Safari */
 }
 
 /* ヘッダー全体(タイトル+ボタン)の枠 */
 .site-header {
   position: relative; /* 中のabsolute要素(タイトル・ボタン)の位置決めの基準にする */
-  padding: 0px 0px;      /* 左右の余白だけ持たせる */
-  height: 60px;          /* 中身がabsoluteだらけなので、高さを自分で決めておく */
+  padding: 0px 0px; /* 左右の余白だけ持たせる */
+  height: 60px; /* 中身がabsoluteだらけなので、高さを自分で決めておく */
 }
 
 /* サイトタイトル(PLAYRIZE) */
 .site-title {
   position: absolute;
-  top: 50%;                    /* 親(.site-header)の高さの真ん中に配置 */
-  left: 20px;                   /* 左から20pxの位置 */
-  transform: translateY(-50%);  /* 自分の高さの半分だけ上に戻して、正確に中央にする */
-  margin: 0;                     /* h1のデフォルト余白をリセット */
+  top: 50%; /* 親(.site-header)の高さの真ん中に配置 */
+  left: 20px; /* 左から20pxの位置 */
+  transform: translateY(-50%); /* 自分の高さの半分だけ上に戻して、正確に中央にする */
+  margin: 0; /* h1のデフォルト余白をリセット */
   font-size: 25px;
 }
 
@@ -41,18 +41,19 @@ html::-webkit-scrollbar {
 /* ハンバーガーメニューボタン */
 .menu-btn {
   position: absolute;
-  top: 50%;                    /* 親(.site-header)の高さの真ん中に配置 */
-  right: 20px;                  /* 右から20pxの位置 */
-  transform: translateY(-50%);  /* 自分の高さの半分だけ上に戻して、正確に中央にする */
+  top: 50%; /* 親(.site-header)の高さの真ん中に配置 */
+  right: 20px; /* 右から20pxの位置 */
+  transform: translateY(-50%); /* 自分の高さの半分だけ上に戻して、正確に中央にする */
   font-size: 30px;
-  flex-direction: column;
-  gap: 5px;                     /* ← 線同士の間隔も追加 */
-  background: none;             /* ← ボタンの標準背景を消す */
-  border: none;                 /* ← ボタンの標準枠線を消す */
-  cursor: pointer;               /* ← クリックできると分かるように */
-  padding: 8px; 
   display: flex;
+  flex-direction: column;
+  gap: 5px; /* 線同士の間隔 */
+  background: none; /* ボタンの標準背景を消す */
+  border: none; /* ボタンの標準枠線を消す */
+  cursor: pointer; /* クリックできると分かるように */
+  padding: 8px;
 }
+
 .bar {
   width: 24px;
   height: 3px;
@@ -61,24 +62,24 @@ html::-webkit-scrollbar {
 
 /* ヘッダー上下の区切り線 */
 .header-line {
-  border: none;                  /* ブラウザ標準の立体的な線を消す */
+  border: none; /* ブラウザ標準の立体的な線を消す */
   border-top: 10px solid #333; /* 自分で色・太さを指定し直す */
-  margin: 0;                      /* 上下のデフォルト余白をリセット */
+  margin: 0; /* 上下のデフォルト余白をリセット */
 }
 
 /* main内の見出し(RANKINGなど) */
-main h1 {
+main h2 {
   text-align: center; /* 文字を中央寄せ */
   font-size: 40px;
 }
 
 /* メニュー本体(最初は非表示) */
 .side-menu {
-  position: fixed;      /* 画面全体を基準に固定 */
+  position: fixed; /* 画面全体を基準に固定 */
   top: 100px;
   bottom: 25px;
-  right: -300px;         /* 画面の外(右側)に隠しておく */
-  width: 250px;         /* 画面の高さいっぱい */
+  right: -300px; /* 画面の外(右側)に隠しておく */
+  width: 250px;
   background: #111;
   transition: right 0.5s ease; /* 動く時になめらかにする */
   padding: 0px 20px;
@@ -93,9 +94,9 @@ main h1 {
   }
 }
 
-.menu-btn2{
+.menu-btn2 {
   background: none;
-  border: none;            
+  border: none;
   cursor: pointer;
   position: relative;
   width: 30px;
@@ -113,7 +114,7 @@ main h1 {
 }
 
 .line:first-child {
-  transform: rotate(45deg);  /* 1本目を右斜めに回転 */
+  transform: rotate(45deg); /* 1本目を右斜めに回転 */
 }
 
 .line:last-child {
@@ -126,32 +127,31 @@ main h1 {
 }
 
 .side-menu ul {
-list-style: none;   /* ・を消す */
-  display: flex;   
-  flex-direction: column;    /* 横並びにする */
+  list-style: none; /* ・を消す */
+  display: flex;
+  flex-direction: column; /* 縦並びにする */
   gap: 12px;
   margin: 0;
   padding: 0;
   margin-top: 40px;
-  align-items: stretch; 
+  align-items: stretch;
 }
-
-ul a:hover {
-  background-color: #555;
-}
-
 
 .side-menu a {
   display: block;
   padding: 10px 20px;
   background-color: #333;
   color: #fff;
-  text-decoration: none;   /* 下線を消す */
+  text-decoration: none; /* 下線を消す */
   border-radius: 6px;
   font-weight: bold;
   transition: background-color 1s;
   text-align: center;
   font-size: 20px;
+}
+
+.side-menu a:hover {
+  background-color: #555;
 }
 
 .ranking-menu {
@@ -160,13 +160,13 @@ ul a:hover {
   left: 50%;
   transform: translate(-50%, -50%); /* 縦横、両方の中心に配置 */
   width: 400px;
-  max-height: 80vh;      /* 画面からはみ出さないよう、高さの上限を決める */
-  overflow-y: auto;       /* 中身が多いときはスクロールできるように */
+  max-height: 80vh; /* 画面からはみ出さないよう、高さの上限を決める */
+  overflow-y: auto; /* 中身が多いときはスクロールできるように */
   background: #111;
   border: 3px solid #333;
   border-radius: 13px;
   padding: 24px;
-  z-index: 1;            /* 他の要素より手前に表示する */
+  z-index: 1; /* 他の要素より手前に表示する */
   margin-top: 80px;
 }
 
@@ -195,13 +195,17 @@ footer {
   display: none;
   padding: 10px;
   margin: 0;
+  margin-top: 10px;
   width: 160px;
   height: 350px;
   overflow-y: auto;
   background: #111;
   border: 1px solid #333;
   border-radius: 10px;
-  margin-top: 10px;
+}
+
+#language-list.open {
+  display: block;
 }
 
 #language-list li {
@@ -211,51 +215,43 @@ footer {
 #language-list button {
   width: 100%;
   padding: 10px 15px;
-
   background: transparent;
   color: white;
-
   border: none;
   border-radius: 6px;
-
   text-align: left;
   font-size: 16px;
-
   cursor: pointer;
 }
+
 #language-list button:hover {
   background: #2a2a2a;
 }
 
-
-#language-list.open {
-  display: block;
-}
-
+/* 言語リストのスクロールバー */
 #language-list::-webkit-scrollbar {
   width: 5px;
 }
-/* ② スクロールバーの通り道 */
+
 #language-list::-webkit-scrollbar-track {
   background: #111;
 }
 
-/* ③ 掴んで動かす部分 */
 #language-list::-webkit-scrollbar-thumb {
   background: #555;
   border-radius: 12px;
 }
 
-/* ④ つまみにマウスを乗せたとき */
 #language-list::-webkit-scrollbar-thumb:hover {
   background: #777;
+}
+
+main {
+  min-height: 100vh;
 }
 
 .stitle {
   position: relative;
   display: block;
   text-align: center;
-}
-main {
-    min-height: 100vh;
 }
