@@ -1,0 +1,266 @@
+:root {
+  --main-gutter: 30px;
+}
+
+/* ページ全体の基本設定 */
+body {
+  background: black;
+  color: white;
+  margin: 0;    /* ブラウザ標準の余白をリセット(画面端の隙間を消す) */
+  padding: 0;
+}
+
+html {
+    scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome系・Safari */
+}
+
+/* ヘッダー全体(タイトル+ボタン)の枠 */
+.site-header {
+  position: relative; /* 中のabsolute要素(タイトル・ボタン)の位置決めの基準にする */
+  padding: 0px 0px;      /* 左右の余白だけ持たせる */
+  height: 60px;          /* 中身がabsoluteだらけなので、高さを自分で決めておく */
+}
+
+/* サイトタイトル(PLAYRIZE) */
+.site-title {
+  position: absolute;
+  top: 50%;                    /* 親(.site-header)の高さの真ん中に配置 */
+  left: 20px;                   /* 左から20pxの位置 */
+  transform: translateY(-50%);  /* 自分の高さの半分だけ上に戻して、正確に中央にする */
+  margin: 0;                     /* h1のデフォルト余白をリセット */
+  font-size: 25px;
+}
+
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 20px;
+    left: 10px;
+  }
+}
+
+/* ハンバーガーメニューボタン */
+.menu-btn {
+  position: absolute;
+  top: 50%;                    /* 親(.site-header)の高さの真ん中に配置 */
+  right: 20px;                  /* 右から20pxの位置 */
+  transform: translateY(-50%);  /* 自分の高さの半分だけ上に戻して、正確に中央にする */
+  font-size: 30px;
+  flex-direction: column;
+  gap: 5px;                     /* ← 線同士の間隔も追加 */
+  background: none;             /* ← ボタンの標準背景を消す */
+  border: none;                 /* ← ボタンの標準枠線を消す */
+  cursor: pointer;               /* ← クリックできると分かるように */
+  padding: 8px; 
+  display: flex;
+}
+.bar {
+  width: 24px;
+  height: 3px;
+  background: white; /* これが無いと、線は透明で見えない */
+}
+
+/* ヘッダー上下の区切り線 */
+.header-line {
+  border: none;                  /* ブラウザ標準の立体的な線を消す */
+  border-top: 10px solid #333; /* 自分で色・太さを指定し直す */
+  margin: 0;                      /* 上下のデフォルト余白をリセット */
+}
+
+/* main内の見出し(RANKINGなど) */
+main h1 {
+  text-align: center; /* 文字を中央寄せ */
+  font-size: 40px;
+}
+
+/* メニュー本体(最初は非表示) */
+.side-menu {
+  position: fixed;      /* 画面全体を基準に固定 */
+  top: 100px;
+  bottom: 25px;
+  right: -300px;         /* 画面の外(右側)に隠しておく */
+  width: 250px;         /* 画面の高さいっぱい */
+  background: #111;
+  transition: right 0.5s ease; /* 動く時になめらかにする */
+  padding: 0px 20px;
+  border: 1px solid #333;
+  z-index: 2;
+  border-radius: 12px 0 0 12px;
+}
+
+@media (max-width: 600px) {
+  .side-menu {
+    width: 200px;
+  }
+}
+
+.menu-btn2{
+  background: none;
+  border: none;            
+  cursor: pointer;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 25px;
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: white;
+}
+
+.line:first-child {
+  transform: rotate(45deg);  /* 1本目を右斜めに回転 */
+}
+
+.line:last-child {
+  transform: rotate(-45deg); /* 2本目を左斜めに回転(逆向き) */
+}
+
+/* JSでこのクラスが付いたら、画面内に出てくる */
+.side-menu.open {
+  right: 0;
+}
+
+.side-menu ul {
+list-style: none;   /* ・を消す */
+  display: flex;   
+  flex-direction: column;    /* 横並びにする */
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  margin-top: 40px;
+  align-items: stretch; 
+}
+
+ul a:hover {
+  background-color: #555;
+}
+
+
+.side-menu a {
+  display: inline-block;   /* aはインライン要素なので、これでpadding等が効くようにする */
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;   /* 下線を消す */
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 1s;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.ranking-menu {
+  position: relative;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 縦横、両方の中心に配置 */
+  width: 400px;
+  max-height: 80vh;      /* 画面からはみ出さないよう、高さの上限を決める */
+  overflow-y: auto;       /* 中身が多いときはスクロールできるように */
+  background: #111;
+  border: 3px solid #333;
+  border-radius: 13px;
+  padding: 24px;
+  z-index: 1;            /* 他の要素より手前に表示する */
+  margin-top: 80px;
+}
+
+@media (max-width: 600px) {
+  .ranking-menu {
+    width: 240px;
+    top: 30%;
+  }
+}
+
+#matrix {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.site-header,
+.header-line,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+#language-list {
+  display: none;
+  padding: 10px;
+  margin: 0;
+  width: 160px;
+  height: 350px;
+  overflow-y: auto;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#language-list li {
+  margin-bottom: 2%;
+}
+
+#language-list button {
+  width: 100%;
+  padding: 10px 15px;
+
+  background: transparent;
+  color: white;
+
+  border: none;
+  border-radius: 6px;
+
+  text-align: left;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+#language-list button:hover {
+  background: #2a2a2a;
+}
+
+
+#language-list.open {
+  display: block;
+}
+
+#language-list::-webkit-scrollbar {
+  width: 5px;
+}
+/* ② スクロールバーの通り道 */
+#language-list::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* ③ 掴んで動かす部分 */
+#language-list::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 12px;
+}
+
+/* ④ つまみにマウスを乗せたとき */
+#language-list::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+.stitle {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+main {
+    min-height: 100vh;
+}

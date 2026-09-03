@@ -1,0 +1,13 @@
+body {
+  background: black;
+  color: white;
+  margin: 0;    /* ブラウザ標準の余白をリセット(画面端の隙間を消す) */
+  padding: 0;
+}
+
+
+#matrix {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+}
