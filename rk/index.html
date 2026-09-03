@@ -7,106 +7,92 @@
     <link rel="icon" href="images/logo2.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="icon.css" />
-    <!-- 外部CSSファイルへのリンク -->
   </head>
   <body>
     <canvas id="matrix"></canvas>
-    <hr class="header-line">
+
+    <hr class="header-line" />
     <div class="site-header">
-    <h1 class="site-title">PLAYRIZE</h1>
-    <button id="btn-a" class="menu-btn">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+      <h1 class="site-title">PLAYRIZE</h1>
+      <button id="btn-a" class="menu-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
-    <hr class="header-line">
-    
+    <hr class="header-line" />
+
     <nav class="side-menu" id="side-menu">
-    <button id="btn-b" class="menu-btn2">
-      <span class="line"></span>
-      <span class="line"></span>
-    </button>
-  <ul>
-  <li><a href="#">HOME</a></li>
-  <li><a href="mypage/mypage.html">MY PROFILE</a></li>
-  <li><a href="#">OVERVIEW</a></li>
-  <li>
-    <a href="#" id="language-btn">LANGUAGE</a>
-    <ul id="language-list">
-      <li><button data-lang="ja">日本語</button></li>
-      <li><button data-lang="en">English</button></li>
-      <li><button data-lang="ko">한국어</button></li>
-      <li><button data-lang="zh">中文</button></li>
-      <li><button data-lang="es">Español</button></li>
-      <li><button data-lang="fr">Français</button></li>
-      <li><button data-lang="de">Deutsch</button></li>
-      <li><button data-lang="it">Italiano</button></li>
-      <li><button data-lang="pt">Português</button></li>
-      <li><button data-lang="ru">Русский</button></li>
-      <li><button data-lang="ar">العربية</button></li>
-      <li><button data-lang="hi">हिन्दी</button></li>
-      <li><button data-lang="th">ไทย</button></li>
-      <li><button data-lang="vi">Tiếng Việt</button></li>
-      <li><button data-lang="id">Bahasa Indonesia</button></li>
-      <li><button data-lang="tr">Türkçe</button></li>
-    </ul>
-
-  </li>
-
-</ul>
-</nav>
-    
+      <button id="btn-b" class="menu-btn2">
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="mypage/mypage.html">MY PROFILE</a></li>
+        <li><a href="#">OVERVIEW</a></li>
+        <li>
+          <a href="#" id="language-btn">LANGUAGE</a>
+          <ul id="language-list">
+            <li><button data-lang="ja">日本語</button></li>
+            <li><button data-lang="en">English</button></li>
+            <li><button data-lang="ko">한국어</button></li>
+            <li><button data-lang="zh">中文</button></li>
+            <li><button data-lang="es">Español</button></li>
+            <li><button data-lang="fr">Français</button></li>
+            <li><button data-lang="de">Deutsch</button></li>
+            <li><button data-lang="it">Italiano</button></li>
+            <li><button data-lang="pt">Português</button></li>
+            <li><button data-lang="ru">Русский</button></li>
+            <li><button data-lang="ar">العربية</button></li>
+            <li><button data-lang="hi">हिन्दी</button></li>
+            <li><button data-lang="th">ไทย</button></li>
+            <li><button data-lang="vi">Tiếng Việt</button></li>
+            <li><button data-lang="id">Bahasa Indonesia</button></li>
+            <li><button data-lang="tr">Türkçe</button></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
     <main>
-    
       <section class="ranking">
-    <h1>RANKING</h1>
+        <h2>RANKING</h2>
+        <nav class="ranking-menu" id="ranking-menu">
+          <div class="ranking-content">
+            <ol class="ranking-list"></ol>
+          </div>
+        </nav>
+      </section>
 
-    <nav class="ranking-menu" id="ranking-menu">
-  <div class="ranking-content">
+      <div class="social-buttons">
+        <a href="#" class="social-button x">
+          <img class="social-icon" src="icon.svg/X.svg" alt="X">
+        </a>
+        <a href="#" class="social-button instagram">
+          <img class="social-icon" src="icon.svg/Instagram.svg" alt="Instagram">
+        </a>
+        <a href="#" class="social-button facebook">
+          <img class="social-icon" src="icon.svg/Facebook.svg" alt="Facebook">
+        </a>
+        <a href="#" class="social-button tiktok">
+          <img class="social-icon" src="icon.svg/Tiktok.svg" alt="TikTok">
+        </a>
+        <a href="#" class="social-button discord">
+          <img class="social-icon" src="icon.svg/Discord.svg" alt="Discord">
+        </a>
+        <a href="#" class="social-button twitch">
+          <img class="social-icon" src="icon.svg/Twitch.svg" alt="Twitch">
+        </a>
+      </div>
 
-    <ol class="ranking-list">
-     
-    </ol>
-  </div>
-</nav>
-</section>
-  <div class="social-buttons">
-    <a href="#" class="social-button x" >
-      <img class="social-icon" src="icon.svg/X.svg" alt="Twitch">
-    </a>
-    <a href="#" class="social-button instagram">
-      <img class="social-icon" src="icon.svg/Instagram.svg" alt="Twitch">
-    </a>
-    <a href="#" class="social-button facebook">
-      <img class="social-icon" src="icon.svg/Facebook.svg" alt="Twitch">
-    </a>
-    <a href="#" class="social-button tiktok">
-      <img class="social-icon" src="icon.svg/Tiktok.svg" alt="Twitch">
-    </a>
-    <a href="#" class="social-button discord">
-      <img class="social-icon" src="icon.svg/Discord.svg" alt="Twitch">
-    </a>
-    <a href="#" class="social-button twitch">
-      <img class="social-icon" src="icon.svg/Twitch.svg" alt="Twitch">
-    </a>
-
-
-  </div>
-
-
-<input type="text" id="username" placeholder="ユーザー名">
-<button id="register-btn">登録する</button>
-
-
-
+      <input type="text" id="username" placeholder="ユーザー名">
+      <button id="register-btn">登録する</button>
     </main>
-    
-  <small class="stitle">© 2026 PLAYRIZE</small>
-    
+
+    <small class="stitle">© 2026 PLAYRIZE</small>
 
     <script src="script.js"></script>
-    <script src="mypage/script1.js"></script>
+    <script src="matrix.js"></script>
   </body>
 </html>
